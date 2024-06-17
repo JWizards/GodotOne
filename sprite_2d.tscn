@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://svb0spuo2fxs"]
+[gd_scene load_steps=2 format=3 uid="uid://bnwomsbl2l6gw"]
 
-[ext_resource type="Texture2D" uid="uid://b68ps8en4y7d4" path="res://Screenshot 2023-10-28 001443.png" id="1_vooue"]
+[ext_resource type="Texture2D" path="res://Screenshot 2023-10-28 001443.png" id="1_vooue"]
 
 [node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(-1.82377, 1.31944)
 texture = ExtResource("1_vooue")
