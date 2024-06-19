@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://yc77orsdkh2l"]
+[gd_scene load_steps=3 format=3 uid="uid://c7ar7j75odcmq"]
+
+[ext_resource type="PackedScene" uid="uid://b58mkfnnvxemk" path="res://GODOTMECH.glb" id="1_e4bde"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m32o3"]
 
@@ -14,3 +16,6 @@ mesh = SubResource("BoxMesh_m32o3")
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D"]
 transform = Transform3D(3.62348, 0, 0, 0, 0.341847, 0, 0, 0, 3.76316, 0, 0, 0)
 polygon = PackedVector2Array(0.497623, 0.505221, 0.497623, -0.49249, -0.500089, -0.486332, -0.49393, 0.505221)
+
+[node name="GODOTMECH" parent="." instance=ExtResource("1_e4bde")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0602687, -0.0336467, -0.0561909)
