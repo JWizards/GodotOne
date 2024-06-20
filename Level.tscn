@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7ar7j75odcmq"]
+[gd_scene load_steps=6 format=3 uid="uid://c7ar7j75odcmq"]
 
 [ext_resource type="PackedScene" uid="uid://b58mkfnnvxemk" path="res://GODOTMECH.glb" id="1_e4bde"]
+[ext_resource type="Script" path="res://CharacterBody3DMovement.gd" id="2_8u2fk"]
+[ext_resource type="PackedScene" uid="uid://bkkpfn4ciklck" path="res://mechmove.glb" id="2_jytvc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m32o3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p18tk"]
+radius = 0.243111
+height = 0.689129
 
 [node name="Node3D" type="Node3D"]
 
@@ -19,3 +25,29 @@ polygon = PackedVector2Array(0.497623, 0.505221, 0.497623, -0.49249, -0.500089, 
 
 [node name="GODOTMECH" parent="." instance=ExtResource("1_e4bde")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0602687, -0.0336467, -0.0561909)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.673761, 0.738949, 0, -0.738949, 0.673761, 0, 2.52211, 3)
+light_energy = 4.071
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999066, -0.0216004, 0.037413, -3.59604e-08, 0.866025, 0.5, -0.0432009, -0.499533, 0.865217, 0.0381528, 1.82342, 3.11261)
+current = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("2_8u2fk")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="CharacterBody3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0920925, 0.99575, 0, -0.99575, -0.0920925, 1, 1.43826, 0.157569)
+light_energy = 4.071
+shadow_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(-0.98918, 0, 0.146705, 0, 1, 0, -0.146705, 0, -0.98918, 1.03957, 0.61246, 0)
+shape = SubResource("CapsuleShape3D_p18tk")
+
+[node name="mechmove" parent="CharacterBody3D/CollisionShape3D" instance=ExtResource("2_jytvc")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.312677, 0)
