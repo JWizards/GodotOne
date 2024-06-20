@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7ar7j75odcmq"]
+[gd_scene load_steps=7 format=3 uid="uid://yc77orsdkh2l"]
 
 [ext_resource type="PackedScene" uid="uid://b58mkfnnvxemk" path="res://GODOTMECH.glb" id="1_e4bde"]
 [ext_resource type="Script" path="res://CharacterBody3DMovement.gd" id="2_8u2fk"]
 [ext_resource type="PackedScene" uid="uid://bkkpfn4ciklck" path="res://mechmove.glb" id="2_jytvc"]
+[ext_resource type="PackedScene" uid="uid://b0e7tvmcwuxkx" path="res://platforms.tscn" id="4_q1v4h"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m32o3"]
 
@@ -51,3 +52,6 @@ shape = SubResource("CapsuleShape3D_p18tk")
 
 [node name="mechmove" parent="CharacterBody3D/CollisionShape3D" instance=ExtResource("2_jytvc")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.312677, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("4_q1v4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7277, -1.50773, -2.8388)
